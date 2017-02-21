@@ -10,7 +10,13 @@ public class InjectData {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String db = "/Users/Ku/Documents/uci/research/tacoco/tacoco_output/joda-time.db";
+		
+		if(args.length < 1){
+			System.err.println("A path to Database is unkown!");
+			System.exit(0);
+		}
+		
+		String db = args[0];
 
 		SQLiteDB sqliteDB = new SQLiteDB();		
 		sqliteDB.open(db);
